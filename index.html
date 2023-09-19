@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Satisfaction Survey</title>
+    <style>
+        .tb8 {
+            width: 230px;
+            border: 1px solid #3366FF;
+            border-left: 4px solid #3366FF;
+            height: 30px;
+            font-size: 18px;
+            font-family: Calibri;
+        }
+
+        .notebook {
+
+            border: 1px solid #3366FF;
+            border-left: 4px solid #3366FF;
+
+            font-size: 14px;
+            font-family: Calibri;
+        }
+
+        textarea.notebook {
+
+
+            width: 100%;
+            padding: 5px 0px;
+            margin-bottom: 20px;
+            resize: vertical;
+
+            line-height: 24px;
+            border-bottom: 2px solid;
+            -webkit-appearance: none;
+            border-radius: 0;
+            background: url(notebook.png);
+        }
+
+        .myButton {
+            -moz-box-shadow: inset 0px 1px 0px -5px #bbdaf7;
+            -webkit-box-shadow: inset 0px 1px 0px -5px #bbdaf7;
+            box-shadow: inset 0px 1px 0px -5px #bbdaf7;
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+            background: -moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+            background: -webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+            background: -o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+            background: -ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+            background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5', GradientType=0);
+            background-color: #79bbff;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            border: 1px solid #84bbf3;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: arial;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 50px;
+            text-decoration: none;
+            text-shadow: 3px -1px 0px #528ecc;
+        }
+
+        .myButton:hover {
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+            background: -moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+            background: -webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+            background: -o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+            background: -ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+            background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff', GradientType=0);
+            background-color: #378de5;
+        }
+
+        .myButton:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: rgb(73, 72, 72); background-attachment: fixed">
+
+    <div
+        style=" color: white;min-height: 100PX;max-width:100%;margin-bottom: 30px; min-width: 1000px;">
+        <div class="kk" style="background-color: rgb(15, 15, 119);height: auto;">
+            <img src="./may.png" width="8%" height="65px" style="float: left;margin: 20px 20px;">
+            <span>
+                <h1 style="width: 70%;float: left;text-align: center;">Ranibai Agnihotri Institute of Computer Science &
+                    Information Technology,Wardha</h1>
+            </span><img src="./jun.png" width="8%" height="65px" style="margin: 10px 20px;float: right;">
+
+        </div>
+    </div><br><br>
+    <form method="post" action="input200.php" id="form" onsubmit="return validateForm();">
+        <div class="aspNetHidden">
+        </div>
+        <br>
+        <div style="height: 100%; border-radius: 10px" align="center">
+            <div style="background:#a3ecea repeat scroll left top; color: rgb(20, 20, 87);
+                                    padding: 10px; border-radius: 10px; width: 400px" align="center">
+                <h2 align="center">
+                    Student Satisfaction Survey</h2>
+            </div>
+            <br>
+            <div class="container" style="width: 1000px">
+
+                <div class="row">
+                    <div class="span9">
+                        <div style="background:teal repeat scroll left top; color: lavenderblush; width: 100%;
+                                                border-radius: 10px">
+                            <br>
+                            <br>
+                            <div id="UpdatePanel1">
+                                <div id="Panel1" align="center">
+                                    <fieldset>
+                                        <table style="width: 100%; font-size: 16px">
+                                            <tbody>
+
+                                                <tr>
+                                                    <td width="33%" class="style1"><b
+                                                            style="font-size:20px; color:#FFCC66">Mobile <span
+                                                                id="Label1" style="color:Red;">*</span></b></td>
+                                                    <td width="50%" class="style1"><b
+                                                            style="font-size:20px; color:#FFCC66">Email <span
+                                                                id="Label1" style="color:Red;">*</span></b></td>
+                                                                <td width="33%" class="style1"><br><b
+                                                                        style="font-size:20px; color:#FFCC66">Gender <span
+                                                                            id="Label1" style="color:Red;">*</span></b></td>
+                                                               
+                                                </tr>
+                                                <tr>
+                                                    
+
+                                                    <td height="73" class="style1"><input type="text" value=""
+                                                            name="mobile" onkeypress="return isNumber(event)"
+                                                            required="" class="tb8">
+                                                        <script>
+                                                            function isNumber(evt) {
+                                                                evt = (evt) ? evt : window.event;
+                                                                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                                                                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                                                                    return false;
+                                                                }
+                                                                return true;
+                                                            }
+                                                        </script>
+
+                                                    </td>
+                                                    <td width="31%" height="73" class="style1"><input type="text"
+                                                        value="" required="" name="email" class="tb8"></td>
+                                                        <td width="31%" height="73" class="style1">
+                                                            <select name="college" id="college" required=""
+                                                            style=" height:35px" class="tb8">
+                                                                <option value="">Select Gender</option>
+                                                                <option value="male"> Male</option>
+                                                                <option value="Female">Female</option>
+                                                            </select>
+                                                        </td>
+                                                            
+                                                </tr>
+                                                <tr>
+                                                                <td width="33%" class="style1"><br><b
+                                                                        style="font-size:20px; color:#FFCC66">Degree/Program
+                                                                        Pursuing Now <span id="Label1"
+                                                                            style="color:Red;">*</span></b></td>
+                                                                            
+                                                                                <td width="30%" class="style1" colspan="2"><br><b
+                                                                                    style="font-size:20px; color:#FFCC66;">Subject
+                                                                               <span
+                                                                                    id="Label1" style="color:Red;">*</span></b></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                    <td height="73" class="style1">
+                                                        <select name="slct1"  required=""
+                                                            style="width:70%; height:35px" class="tb8" id="slct1" onchange="populate(this.id,'slct2')">
+                                                            <option value="">Select Degree/Program</option>
+                                                            <option value="bca"> BCA</option>
+                                                            <option value="bba">BBA</option>
+                                                            <option value="bcca"> BCCA</option>
+                                                            <option value="mca"> MCA</option>
+                                                            <option value="mba"> MBA</option>
+                                                        </select>
+                                                    </td>
+                                                    
+                                                    <td height="73" class="style1" colspan="1">
+                                                        <select name="slct2" id="slct2" required=""
+                                                            style="width:50%; height:35px" class="tb8">
+                                                           </select>
+                                                    </td>
+                                                    
+                                                </tr>
+
+                                                
+                                                
+                 
+                                                <tr>
+
+
+                                                    <input type="text" value="" name="degree1" class="tb8"
+                                                        style="visibility:hidden; width:67%"> </td>
+                                                </tr>
+
+
+
+                                                <tr>
+                                                    <td height="95" class="style1"><br>
+
+
+                                                        <input type="text" value="" name="subject1" class="tb8"
+                                                            style="visibility:hidden; width:67%">
+                                                    </td>
+                                                    <td height="95" class="style1"></td>
+                                                    <td width="31%" height="95" class="style1"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+                                        <div align="center"
+                                            style="color:#000; padding:5px; background:#FFFFFF; font-size:20px">
+                                            Following are questions for online student satisfaction survey regarding
+                                            teaching
+                                            learning process.</div>
+
+                                        <br>
+                                        <div align="left">
+                                            <label style="font-size:20px"><strong style="color:#FFCC66">1. How well did
+                                                    the teachers prepare for the classes?</strong> </label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+
+                                                <select name="Faculty1" id="Faculty1" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="85 to 100%">85 to 100%</option>
+                                                    <option value="70 to 84%">70 to 84%</option>
+                                                    <option value="55 to 69%">55 to 69%</option>
+                                                    <option value="30 to 54%">30 to 54%</option>
+                                                    <option value="Below 30%">Below 30%</option>
+                                                </select>
+
+
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">2. How well did the teachers prepare for the
+                                                    classes? </strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty2" id="Faculty2" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Thoroughly">Perfectly</option>
+                                                    <option value="Satisfactorily">Thoroughly</option>
+                                                    <option value="Poorly">Moderately</option>
+                                                    <option value="Indifferently">Satisfactorlly</option>
+
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">3. How well were the teachers able to
+                                                    communicate? </strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty3" id="Faculty3" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Always effective">Always effective</option>
+                                                    <option value="Sometimes effective">Fairly effective</option>
+                                                    <option value="Just satisfactorily">Sometimes effective</option>
+                                                    <option value="Generally ineffective">Just satisfactorily</option>
+                                                </select>
+                                            </div>
+
+
+
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">4. The teacher’s approach to teaching can best
+                                                    be described as </strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty4" id="Faculty4" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Excellent">Excellent</option>
+                                                    <option value="Very good">Very good</option>
+                                                    <option value="Good">Good</option>
+                                                    <option value="Fair">Fair</option>
+                                                </select>
+                                            </div>
+
+
+                                            <hr>
+
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">5. Fairness of the internal evaluation process
+                                                    by the teachers. </strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty5" id="Faculty5" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Always fair">Always fair</option>
+                                                    <option value="Usually fair">Usually fair</option>
+                                                    <option value="Sometimes unfair">Sometimes fair</option>
+                                                    <option value="Usually unfair">Occasionally fair</option>
+                                                </select>
+                                            </div>
+
+
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">6. Was your performance in assignments
+                                                    discussed with you? </strong></label>
+
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty6" id="Faculty6" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Every time">Every time</option>
+                                                    <option value="Usually">Usually</option>
+                                                    <option value="Occasionally/Sometimes">Sometimes</option>
+                                                    <option value="Rarely">Occasionally</option>
+                                                </select>
+                                            </div>
+
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">7. The institution provides multiple
+                                                    opportunities to learn and grow. </strong></label>
+
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty7" id="Faculty7" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Regularly">Strongly agree</option>
+                                                    <option value="Often">Agree</option>
+                                                    <option value="Sometimes">Moderately agree</option>
+                                                    <option value="Rarely">Neutral</option>
+                                                </select>
+                                            </div>
+
+
+                                            <hr>
+                                            <br>
+
+
+
+
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">8. The teachers illustrate the concepts
+                                                    through examples and applications.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty12" id="Faculty12" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Every time">Every time</option>
+                                                    <option value="Usually">Usually</option>
+                                                    <option value="Occasionally/Sometimes">Sometimes</option>
+                                                    <option value="Rarely">Occasionally</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">9. The teachers identify your strengths and
+                                                    encourage you with providing right level of
+                                                    challenges.?</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty13" id="Faculty13" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Fully">Fully</option>
+                                                    <option value="Reasonably">Reasonably</option>
+                                                    <option value="Partially">Partially</option>
+                                                    <option value="Slightly">Slightly</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">10. Teachers are able to identify your
+                                                    weaknesses and help you to overcome them.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty14" id="Faculty14" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Every time">Every time</option>
+                                                    <option value="Usually">Usually</option>
+                                                    <option value="Occasionally/Sometimes">Sometimes</option>
+                                                    <option value="Rarely">Occasionally</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">11. The institution makes effort to engage
+                                                    students in the monitoring, review and continuous
+                                                    quality improvement of the teaching learning
+                                                    process.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty15" id="Faculty15" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Strongly agree">Strongly agree</option>
+                                                    <option value="Agree">Agree</option>
+                                                    <option value="Disagree">Moderately agree</option>
+                                                    <option value="Neutral">Neutral</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">12. The institute/ teachers use student
+                                                    centric methods, such as experiential learning, participative
+                                                    learning and problem solving methodologies for enhancing learning
+                                                    experiences.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty16" id="Faculty16" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="To a great extent">Always</option>
+                                                    <option value="Some what">To a great extent</option>
+                                                    <option value="Moderate">Moderate</option>
+                                                    <option value="Very little">Some what</option>
+
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">13. Teachers encourage you to participate in
+                                                    extracurricular activities.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty17" id="Faculty17" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="To a great extent">Strongly agree</option>
+                                                    <option value="Agree">Agree</option>
+                                                    <option value="Disagree">Moderately agree</option>
+                                                    <option value="Neutral">Neutral</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">14. Efforts are made by the institute/
+                                                    teachers to inculcate soft skills, life skills and employability
+                                                    skills to make you ready for the world of work.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty18" id="Faculty18" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="To a great extent">Always</option>
+                                                    <option value="Some what">To a great extent</option>
+                                                    <option value="Moderate">Moderate</option>
+                                                    <option value="Very little">Some what</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">15. What percentage of teachers use ICT tools
+                                                    such as LCD projector, Multimedia, etc. while
+                                                    teaching.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty19" id="Faculty19" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="Above 90%">Above 90%</option>
+                                                    <option value="70 – 89%">70 – 89%</option>
+                                                    <option value="50 – 69%">50 – 69%</option>
+                                                    <option value="30 – 49%">30 – 49%</option>
+                                                    <option value="Below 29%">Below 29%</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+
+                                            <label style="color:#FFFFFF; font-size:20px"><strong
+                                                    style="color:#FFCC66">16. The overall quality of teaching-learning
+                                                    process in your institute is very good.</strong></label>
+                                            <div align="left" style="padding:10px 0px 10px 0px">
+                                                <select name="Faculty20" id="Faculty20" required=""
+                                                    style="width:70%; height:35px" class="tb8">
+                                                    <option value="">Select Option</option>
+                                                    <option value="To a great extent">Strongly agree</option>
+                                                    <option value="Agree">Agree</option>
+                                                    <option value="Disagree">Moderately agree</option>
+                                                    <option value="Neutral">Neutral</option>
+                                                </select>
+                                            </div>
+                                            <hr>
+                                            <br>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <br>
+                                <div id="Panel1">
+                                    <fieldset>
+                                        <legend>
+                                            <strong
+                                                style="font-size:20px; font-weight:800; font-family: 'Bell MT'; color:#FFCC66">17.
+                                                Give three observation / suggestions to improve the overall teaching –
+                                                learning experience
+                                                in your institution.
+                                            </strong><br>
+                                        </legend>
+                                        <div align="left" style="">
+                                            <p>
+                                                <label style="color:#FFFFFF; font-size:20px;"><strong
+                                                        style="color:#FFCC66">Suggestions for
+                                                        Improvement</strong></label><br><br>
+                                                <textarea
+                                                style="background-color: white;" id="message" name="message1" autocomplete="off" required=""
+                                                    class="notebook" rows="7" cols="60"></textarea>
+                                                <span class="error" style="display:none;"></span>
+                                            </p>
+                                        </div>
+
+
+
+                                        <input name="submit" value="Submit" id="btnreset" type="submit"
+                                            class="myButton">
+
+
+
+                                        <input name="btnreset" value="Reset" id="btnreset" type="reset"
+                                            class="myButton">
+
+
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+    <div class="dd" style="background-color: #79bbff; width:100%;text-align: center;">
+        <h4>Designed by Mayur Vaidya</h4>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
